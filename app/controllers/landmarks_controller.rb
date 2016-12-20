@@ -1,5 +1,5 @@
-require 'pry'
 class LandmarksController < ApplicationController
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -20,7 +20,6 @@ class LandmarksController < ApplicationController
   end
 
   patch '/landmarks/:id' do
-    #binding.pry
     @landmark = Landmark.find_by_id(params['id'])
     @landmark.update(params[:landmark])
     erb (:'landmarks/show')
@@ -34,8 +33,5 @@ class LandmarksController < ApplicationController
     Landmark.create(params[:landmark])
     erb (:'landmarks/show')
   end
-
-
-
 
 end

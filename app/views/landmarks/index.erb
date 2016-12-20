@@ -1,3 +1,14 @@
-<%Landmark.all.each do |landmark|%>
-<%=landmark.name%> <%=landmark.year_completed%>
-<%end%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <%Landmark.all.each do |landmark|%>
+      <%=landmark.name%> <%=landmark.year_completed%>
+    <%end%>
+
+  </body>
+</html>
