@@ -41,7 +41,7 @@ class FiguresController < ApplicationController
     erb (:'figures/show')
   end
 
-  post '/figures' do
+  post '/figures' do #this needs refactoring/new logic
     if params[:title][:name] == "" && params[:landmark][:name] == ""
      Figure.create(params[:figure])
     elsif params[:title][:name] != "" && params[:landmark][:name] != ""
