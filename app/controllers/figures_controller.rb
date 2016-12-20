@@ -1,4 +1,3 @@
-require 'pry'
 class FiguresController < ApplicationController
   configure do
     set :public_folder, 'public'
@@ -39,19 +38,6 @@ class FiguresController < ApplicationController
          a = Figure.find_by_id(params[:id]).update(params[:figure])
          a.update(landmark_ids: landmark.id)
        end
-
-
-      #  elsif params[:title][:name] != "" && params[:landmark][:name] != ""
-      #    Figure.update(params[:figure], params[:title], params[:landmark])
-      #  elsif params[:title][:name] != ""
-      #    title = Title.create(name: params[:title])
-      #    a = Figure.update(params[:figure])
-      #    a.update(title_ids: title.id)
-      #  elsif params[:landmark][:name] != ""
-      #    landmark = Landmark.create(name: params[:landmark])
-      #    a = Figure.update(params[:figure])
-      #    a.update(landmark_ids: landmark.id)
-      #end
       @figure = Figure.find_by_id(params['id'])
       erb (:'figures/show')
   end
